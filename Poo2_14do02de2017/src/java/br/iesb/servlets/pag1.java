@@ -33,6 +33,7 @@ o	Passo 3.2 Nos métodos doPost e doGet lançar as seguintes exceções:
 @WebServlet(name = "ServMath",
             urlPatterns = "/action/math.do",
             description = "Servet para executar operações matemáticas")
+//esta notation acima dispensa o web.xml
 public class pag1 extends HttpServlet
 {
     @Override
@@ -53,9 +54,10 @@ public class pag1 extends HttpServlet
             
             if (i % 2 == 0)
             {
+                idx++;
                 varHtml = varHtml+""+(i)+","+"";
             }
-            if (i % Math.sqrt(num) == 0 && i != 0)
+            if (idx % Math.sqrt(num/2) == 0 && i != 0)
             {
                 varHtml = varHtml+"<br>";
             }
